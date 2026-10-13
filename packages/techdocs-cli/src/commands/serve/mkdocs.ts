@@ -17,13 +17,14 @@
 import { OptionValues } from 'commander';
 import openBrowser from 'react-dev-utils/openBrowser';
 import { createLogger } from '../../lib/utility';
-import { runMkdocsServer } from '../../lib/mkdocsServer';
+import { runEngineServer } from '../../lib/server';
 import { RunOnOutput } from '@backstage/cli-common';
 import { getMkdocsYml } from '@backstage/plugin-techdocs-node';
 import fs from 'fs-extra';
 import { checkIfDockerIsOperational } from './utils';
-import { getEngineConfig } from '../../lib/engineConfig';
+import { getEngineConfig } from '../../lib/engines';
 import { resolveEngine } from '../../lib/catalogEntity';
+import { prepareServeConfig } from '../../lib/prepareServeConfig';
 
 export default async function serveMkdocs(opts: OptionValues) {
   const logger = createLogger({ verbose: opts.verbose });
@@ -43,6 +44,12 @@ export default async function serveMkdocs(opts: OptionValues) {
   const { path: mkdocsYmlPath, configIsTemporary } = await getMkdocsYml(
     './',
     opts.siteName,
+  );
+
+  const serveConfigPath = await prepareServeConfig(
+    engineConfig,
+    mkdocsYmlPath,
+    logger,
   );
 
   // We want to open browser only once based on a log.
@@ -76,18 +83,17 @@ export default async function serveMkdocs(opts: OptionValues) {
   // https://github.com/mkdocs/mkdocs/issues/879#issuecomment-203536006
   // Had me questioning this whole implementation for half an hour.
 
-  const childProcess = runMkdocsServer({
+  const childProcess = runEngineServer({
     port: opts.port,
-    dockerImage: opts.dockerImage,
+    dockerImage: opts.dockerImage ?? engineConfig.defaultImage,
     dockerEntrypoint: opts.dockerEntrypoint,
     dockerOptions: opts.dockerOption,
     useDocker: opts.docker,
-    mkdocsConfigFileName: mkdocsYmlPath,
     onStdout: logFunc,
     onStderr: logFunc,
     engineBinary: engineConfig.binary,
     engineServeArgs: engineConfig.serveArgs(opts.port, {
-      configFile: mkdocsYmlPath,
+      configFile: serveConfigPath,
       useDocker: opts.docker,
     }),
   });
