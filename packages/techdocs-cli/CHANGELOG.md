@@ -1,5 +1,16 @@
 # @techdocs/cli
 
+## 1.12.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/plugin-techdocs-node@2.0.3
+  - @backstage/backend-defaults@0.18.1
+  - @backstage/config@1.3.10
+  - @backstage/catalog-model@1.10.2
+  - @backstage/cli-common@0.3.2
+
 ## 1.12.1-next.0
 
 ### Patch Changes

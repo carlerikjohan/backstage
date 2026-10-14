@@ -1,5 +1,17 @@
 # @backstage/cli
 
+## 0.36.7
+
+### Patch Changes
+
+- 36e3f24: Updated the test runner to use the latest Jest 30 releases.
+- Updated dependencies
+  - @backstage/cli-node@0.3.5
+  - @backstage/cli-module-build@0.1.9
+  - @backstage/cli-module-test-jest@0.1.7
+  - @backstage/cli-common@0.3.2
+  - @backstage/cli-defaults@0.1.7
+
 ## 0.36.7-next.0
 
 ### Patch Changes

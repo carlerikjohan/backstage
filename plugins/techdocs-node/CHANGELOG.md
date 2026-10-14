@@ -1,5 +1,23 @@
 # @backstage/plugin-techdocs-node
 
+## 2.0.3
+
+### Patch Changes
+
+- 9fc5387: Improved handling of mapping-style Markdown extension configuration.
+- 0fd5fe5: Fixed TechDocs allowing `custom_icons` paths in `mkdocs.yml` that resolve outside the documentation input directory. A `custom_icons` option with such a path is now removed from the configuration with a warning.
+- 8a37336: Fixed TechDocs generation rejecting `mkdocs.yml` files that use the emoji indexes and generators or the `pymdownx.superfences` custom fence formats documented by mkdocs-material, pymdown-extensions and mkdocs-mermaid2.
+- 76ac6ed: Updated dependency `js-yaml` to `^5.0.0`.
+- Updated dependencies
+  - @backstage/integration@2.1.3
+  - @backstage/backend-plugin-api@1.11.0
+  - @backstage/config@1.3.10
+  - @backstage/errors@1.3.2
+  - @backstage/plugin-techdocs-common@0.1.2
+  - @backstage/catalog-model@1.10.2
+  - @backstage/integration-aws-node@0.2.3
+  - @backstage/plugin-search-common@1.2.26
+
 ## 2.0.3-next.2
 
 ### Patch Changes

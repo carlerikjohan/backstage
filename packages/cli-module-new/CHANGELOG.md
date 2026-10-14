@@ -1,5 +1,15 @@
 # @backstage/cli-module-new
 
+## 0.1.8
+
+### Patch Changes
+
+- e4597ce: Updated the `plugin-web-library` template to use `@backstage/ui` instead of the deprecated `@material-ui/core`.
+- Updated dependencies
+  - @backstage/cli-node@0.3.5
+  - @backstage/errors@1.3.2
+  - @backstage/cli-common@0.3.2
+
 ## 0.1.8-next.1
 
 ### Patch Changes

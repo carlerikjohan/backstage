@@ -1,5 +1,13 @@
 # @backstage/cli-module-actions
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/cli-node@0.3.5
+  - @backstage/errors@1.3.2
+
 ## 0.1.4-next.0
 
 ### Patch Changes

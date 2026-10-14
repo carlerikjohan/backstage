@@ -1,5 +1,22 @@
 # @backstage/frontend-test-utils
 
+## 0.6.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/plugin-app@0.5.4
+  - @backstage/frontend-app-api@0.16.9
+  - @backstage/frontend-plugin-api@0.18.2
+  - @backstage/config@1.3.10
+  - @backstage/core-app-api@1.20.6
+  - @backstage/core-plugin-api@1.12.11
+  - @backstage/filter-predicates@0.1.6
+  - @backstage/test-utils@1.7.23
+  - @backstage/plugin-app-react@0.2.8
+  - @backstage/plugin-permission-common@0.9.12
+  - @backstage/plugin-permission-react@0.5.6
+
 ## 0.6.5-next.0
 
 ### Patch Changes
